@@ -901,7 +901,7 @@ func (svc *Service) Restore(ctx context.Context, tx *reform.TX) error {
 					}
 
 					// Installs new version of the script.
-					if err = svc.QAN.EnsureAgentRuns(ctx, name, *a.ListenPort); err != nil {
+					if err = svc.QAN.Restore(ctx, name, *a.ListenPort); err != nil {
 						return err
 					}
 				}
